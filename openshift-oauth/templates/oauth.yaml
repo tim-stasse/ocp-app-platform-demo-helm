@@ -8,12 +8,6 @@ metadata:
   name: cluster
 spec:
   identityProviders:
-    - name: htpasswd
-      mappingMethod: claim
-      type: HTPasswd
-      htpasswd:
-        fileData:
-          name: htpasswd
     - name: developers
       mappingMethod: claim
       type: OpenID
