@@ -35,7 +35,7 @@ endpoints:
       memory: 250Mi
 backingStore:
   numVolumes: 3
-  storageClass: ocs-external-storagecluster-ceph-rbd
+  storageClass: managed-csi
   storageSize: 50Gi
   resources:
     requests:
