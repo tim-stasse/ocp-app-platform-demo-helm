@@ -61,6 +61,7 @@ spec:
               PUBLIC_KEY=$(cat /tmp/cosign.pub)
 
               if [ -z "$PRIVATE_KEY" ] || [ -z "$PUBLIC_KEY" ]; then
+                ldd --version
                 echo "ERROR: Failed to generate cosign key pair"
                 exit 1
               fi
