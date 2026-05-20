@@ -89,7 +89,7 @@ data:
             - key: orchestrator_namespace
               value: "{{ $.Values.orchestrator.namespace }}"
             - key: chart_repo_url
-              value: "https://redhat-ads-tech.github.io/ocp-app-platform-demo-apps-helm"
+              value: "https://tim-stasse.github.io/ocp-app-platform-demo-apps-helm"
 {{- end }}
 
         - name: Add new files to the repository

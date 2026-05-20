@@ -37,19 +37,19 @@ gitlab:
     - name: rhdh
       repo:
         - name: developer-hub-config
-          url: https://github.com/redhat-ads-tech/ocp-app-platform-demo-developer-hub-config.git
+          url: https://github.com/tim-stasse/ocp-app-platform-demo-developer-hub-config.git
         - name: rhdh-entities
           url: https://github.com/redhat-pe-workshop/pe-workshop-entities.git
         - name: template-developer-self-service
           url: https://github.com/redhat-pe-workshop/rhdh-template-developer-self-service.git
         - name: devfiles
-          url: https://github.com/redhat-ads-tech/devfiles.git
+          url: https://github.com/tim-stasse/devfiles.git
         - name: rhdh-templates
-          url: https://github.com/redhat-ads-tech/ocp-app-platform-demo-rhdh-templates.git
+          url: https://github.com/tim-stasse/ocp-app-platform-demo-rhdh-templates.git
         - name: helm-charts
-          url: https://github.com/redhat-ads-tech/ocp-app-platform-demo-apps-helm.git
+          url: https://github.com/tim-stasse/ocp-app-platform-demo-apps-helm.git
         - name: infra-app-of-apps
-          url: https://github.com/redhat-ads-tech/ocp-app-platform-demo-infra-app-of-apps.git
+          url: https://github.com/tim-stasse/ocp-app-platform-demo-infra-app-of-apps.git
       users:
         - id: pe1
         - id: pe2
@@ -68,11 +68,11 @@ gitlab:
     - name: parasol
       repo:
         - name: parasol-insurance
-          url: https://github.com/redhat-ads-tech/parasol-insurance.git
+          url: https://github.com/tim-stasse/parasol-insurance.git
         - name: parasol-insurance-manifests
-          url: https://github.com/redhat-ads-tech/parasol-insurance-manifests.git
+          url: https://github.com/tim-stasse/parasol-insurance-manifests.git
         - name: parasol-insurance-secured-manifests
-          url: https://github.com/redhat-ads-tech/parasol-insurance-secured-manifests.git
+          url: https://github.com/tim-stasse/parasol-insurance-secured-manifests.git
       users:
         - id: dev1
         - id: dev2
