@@ -1,7 +1,7 @@
 nameOverride: ""
 
 serviceMesh:
-  channel: stable-3.2
+  channel: stable-3.3
   installPlanApproval: Automatic
   name: servicemeshoperator3
   source: redhat-operators
