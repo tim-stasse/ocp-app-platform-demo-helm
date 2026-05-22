@@ -23,7 +23,8 @@ metadata:
     argocd.argoproj.io/sync-wave: "0"
 spec:
   ports:
-    - port: 5432
+    - name: tcp-postgresql
+      port: 5432
       targetPort: 5432
   selector:
     app: parasol-db
