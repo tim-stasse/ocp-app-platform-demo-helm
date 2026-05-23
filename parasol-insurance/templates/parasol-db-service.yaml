@@ -15,4 +15,24 @@ spec:
       targetPort: 5432
   selector:
     app: parasol-db
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: parasol-db-tcp-bypass
+  namespace: {{ $env.namespace }}
+spec:
+  hosts:
+    - "parasol-db.{{ $env.namespace }}.svc.cluster.local"
+    - "parasol-db"
+  gateways:
+    - waypoint 
+  tcp: # Explicitly tells Envoy NOT to inspect this traffic at Layer 7
+    - match:
+        - port: 5432
+      route:
+        - destination:
+            host: parasol-db.{{ $env.namespace }}.svc.cluster.local
+            port:
+              number: 5432
 {{- end }}
