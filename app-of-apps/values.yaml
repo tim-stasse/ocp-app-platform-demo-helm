@@ -207,6 +207,9 @@ rhtas:
     email: admin@rhdemo.com
     org: Parasol
 
+openshiftNetwork:
+  disabled: false
+
 openshiftOAuth:
   disabled: false
   name: openshift-oauth

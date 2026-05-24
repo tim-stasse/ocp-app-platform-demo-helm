@@ -1,0 +1,18 @@
+{{- if not .Values.openshiftNetwork.disabled }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openshift-network
+  annotations:
+    argocd.argoproj.io/sync-wave: "{{ .syncWave }}"
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: openshift-network
+    repoURL: {{ .Values.gitops.repoURL }}
+    targetRevision: {{ .Values.gitops.targetRevision }}
+{{ include "app-of-apps.syncPolicy" . | indent 2 }}
+{{- end }}
