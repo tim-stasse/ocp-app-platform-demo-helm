@@ -1,0 +1,61 @@
+---
+apiVersion: operator.open-cluster-management.io/v1
+kind: MultiClusterHub
+metadata:
+  name: multiclusterhub
+  namespace: open-cluster-management
+  annotations:
+    {{- include "acm-instance.argocd-syncwave" . | nindent 4 }}
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  localClusterName: {{ .Values.hub.localClusterName }}
+  availabilityConfig: {{ .Values.hub.availabilityConfig }}
+  imagePullSecret: {{ .Values.hub.imagePullSecret }}
+  separateCertificateManagement: {{ .Values.hub.separateCertificateManagement }}
+  overrides:
+    components:
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.appLifecycle.enabled }}
+        name: app-lifecycle
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.clusterLifecycle.enabled }}
+        name: cluster-lifecycle
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.clusterPermission.enabled }}
+        name: cluster-permission
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.console.enabled }}
+        name: console
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.grc.enabled }}
+        name: grc
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.insights.enabled }}
+        name: insights
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.multiClusterEngine.enabled }}
+        name: multicluster-engine
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.multiClusterObservability.enabled }}
+        name: multicluster-observability
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.search.enabled }}
+        name: search
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.submarinerAddon.enabled }}
+        name: submariner-addon
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.volSync.enabled }}
+        name: volsync
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.clusterBackup.enabled }}
+        name: cluster-backup
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.fineGrainedRbac.enabled }}
+        name: fine-grained-rbac
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.siteConfig.enabled }}
+        name: siteconfig
+      - configOverrides: {}
+        enabled: {{ .Values.hub.components.cnvMtvIntegrations.enabled }}
+        name: cnv-mtv-integrations

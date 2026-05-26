@@ -232,6 +232,16 @@ amqStreams:
   name: amq-streams
   namespace: kafka
 
+acm:
+  enabled: true
+  name: acm
+  namespace: open-cluster-management
+  hub:
+    localClusterName: local-cluster
+    availabilityConfig: High
+    imagePullSecret: pull-secret
+    separateCertificateManagement: false
+
 acs:
   enabled: true
   name: acs

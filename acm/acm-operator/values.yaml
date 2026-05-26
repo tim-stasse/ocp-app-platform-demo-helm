@@ -1,0 +1,16 @@
+nameOverride: ""
+
+name: advanced-cluster-management
+namespace: open-cluster-management
+
+subscription:
+  channel: release-2.16
+  installPlanApproval: Automatic
+  name: advanced-cluster-management
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+
+argocd:
+  enabled: true
+  operator:
+    syncwave: "-2"

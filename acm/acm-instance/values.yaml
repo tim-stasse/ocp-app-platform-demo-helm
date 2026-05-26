@@ -1,0 +1,42 @@
+nameOverride: ""
+
+argocd:
+  enabled: true
+  syncwave: "2"
+
+hub:
+  localClusterName: local-cluster
+  availabilityConfig: High
+  imagePullSecret: multiclusterhub-operator-pull-secret
+  separateCertificateManagement: false
+  components:
+    appLifecycle:
+      enabled: true
+    clusterLifecycle:
+      enabled: true
+    clusterPermission:
+      enabled: true
+    console:
+      enabled: true
+    grc:
+      enabled: true
+    insights:
+      enabled: true
+    multiClusterEngine:
+      enabled: true
+    multiClusterObservability:
+      enabled: true
+    search:
+      enabled: true
+    submarinerAddon:
+      enabled: true
+    volSync:
+      enabled: true
+    clusterBackup:
+      enabled: false
+    fineGrainedRbac:
+      enabled: false
+    siteConfig:
+      enabled: false
+    cnvMtvIntegrations: 
+      enabled: false
