@@ -1,0 +1,13 @@
+apiVersion: apps.open-cluster-management.io/v1beta1
+kind: GitOpsCluster
+metadata:
+  name: aks-spoke-gitops-cluster
+  namespace: rhdh-gitops
+spec:
+  argoServer:
+    argoNamespace: rhdh-gitops
+  placementRef:
+    kind: Placement
+    apiVersion: cluster.open-cluster-management.io/v1beta1
+    name: aks-spoke-clusters
+    namespace: rhdh-gitops
