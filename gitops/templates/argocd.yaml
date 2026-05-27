@@ -21,6 +21,7 @@ spec:
   rbac:
     defaultPolicy: role:readonly
     policy: |
+      g, system:cluster-admins, role:admin
       g, cluster-admins, role:admin
   repo:
     resources:
