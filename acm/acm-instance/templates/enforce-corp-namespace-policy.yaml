@@ -1,0 +1,25 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: Policy
+metadata:
+  name: enforce-corp-namespace-policy
+  namespace: rhdh-gitops
+spec:
+  disabled: false
+  policy-templates:
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
+        metadata:
+          name: enforce-corp-namespace-config-policy
+        spec:
+          object-templates:
+            - objectDefinition:
+                apiVersion: v1
+                kind: Namespace
+                metadata:
+                  name: corp-compliance-guardrails
+              complianceType: musthave
+          remediationAction: enforce
+          severity: low
+          pruneObjectBehavior: None
+  remediationAction: enforce

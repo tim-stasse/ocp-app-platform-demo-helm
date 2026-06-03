@@ -1,0 +1,13 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: enforce-corp-namespace-policy-placement
+  namespace: rhdh-gitops
+placementRef:
+  name: spoke-clusters
+  kind: Placement
+  apiGroup: cluster.open-cluster-management.io
+subjects:
+  - name: enforce-corp-namespace-policy
+    kind: Policy
+    apiGroup: policy.open-cluster-management.io
